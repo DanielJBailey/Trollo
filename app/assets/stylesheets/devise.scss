@@ -1,4 +1,5 @@
 @import "variables";
+
 .log-in-container {
     display: flex;
     flex-direction: column;
@@ -52,6 +53,12 @@
             -webkit-appearance: button;
             &:hover {
                 background-color: #404a4d;
+            }
+        }
+        .submit.red {
+            background-color: #d63031;
+            &:hover {
+                background-color: #dd5555;
             }
         }
     }

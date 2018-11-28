@@ -12,4 +12,8 @@ class User < ApplicationRecord
     second_letter = self.last_name.split('').first
     "#{first_letter.upcase}#{second_letter.upcase}"
   end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end

@@ -1,0 +1,14 @@
+<div class="user-menu hide">
+    <div class="user-name">
+        <%= image_tag 'times.svg', class:"close-icon" %>
+        <%= current_user.full_name%>
+    </div>
+    <ul class="menu-options">
+        <%= link_to edit_user_registration_path, class:"menu-item" do %>
+            <%= image_tag 'wrench.svg', class:"icon" %> Settings
+        <% end %>
+        <%= link_to destroy_user_session_path, :method => :delete, class:"menu-item" do %>
+            <%= image_tag 'sign-out.svg', class:"icon" %> Sign Out
+        <% end %>
+    </ul>
+</div>
