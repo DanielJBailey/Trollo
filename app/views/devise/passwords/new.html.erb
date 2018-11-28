@@ -1,16 +1,19 @@
-<h2>Forgot your password?</h2>
+<div class="log-in-container">
+  <span class="logo-span"><%= image_tag("trello-square.svg", class:"square-logo") %><%= image_tag("logo.svg", class:"log-in-logo")%></span>
+  <hr/>
+  <h2 class="header">Recover Your Password</h2>
+  <hr/>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input", placeholder: "Email Address"%>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Submit", class: "submit" %>
+    </div>
+  <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+

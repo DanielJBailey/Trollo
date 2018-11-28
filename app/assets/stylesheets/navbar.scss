@@ -1,34 +1,101 @@
 @import "variables";
-
 .navigation {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 5px;
     justify-content: space-between;
-    padding: 1em;
-    background-color: rgba(255,255,255,0.1);
-
-    .logo-span{
+    background-color: rgba(255, 255, 255, 0.1);
+    .left-side-menu {
         display: flex;
         flex-direction: row;
-        align-items: center;
-
-        .square {
-            width: 30px;
+        a {
+            height: 32px;
+            width: 32px;
+            .home-button {
+                background-color: rgba(255,255,255,0.3);
+                height: 32px;
+                padding: 7px;
+                cursor: pointer;
+                width: 32px;
+                border-radius: 3px;
+                &:hover {
+                    background-color: rgba(255,255,255,0.2);
+                }
+            }
         }
-
-        .logo {
-            width: 100px;
-            margin-left: 5px;
+        
+        .board-button {
+            background-color: rgba(255,255,255,0.3);
+            height: 32px;
+            padding: 7px;
+            cursor: pointer;
+            width: 32px;
+            border-radius: 3px;
+            margin: 0 5px;
+            &:hover {
+                background-color: rgba(255,255,255,0.2);
+            }
+        } 
+    }
+    .right-side-menu {
+        display: flex;
+        flex-direction: row;
+        .avatar {
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.8);
+            color: $body;
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(255,255,255,0.5);
+            }
+        }
+        .add-menu-button {
+            background-color: rgba(255,255,255,0.3);
+            height: 32px;
+            padding: 5px;
+            cursor: pointer;
+            width: 32px;
+            border-radius: 3px;
+            margin: 0 5px;
+            &:hover {
+                background-color: rgba(255,255,255,0.2);
+            }
         }
     }
-
+    a {
+        padding: 0;
+        .menu-logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            opacity: 0.5;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.8;
+            }
+            .trollo-square {
+                width: 18px;
+            }
+            .logo {
+                width: 50px;
+                margin-left: 5px;
+            }
+        }
+    }
     .log-in-buttons {
         display: flex;
         flex-direction: row;
-
-        .login-button, .sign-up-button {
+        .login-button,
+        .sign-up-button {
             padding: 10px 25px;
             border-radius: 10px;
             color: white;
@@ -37,7 +104,7 @@
             }
         }
         .login-button {
-            background-color: $darkblue;
+            background-color: #0079BF;
             box-shadow: inset -2px -2px #05487a;
             &:hover {
                 background-color: #045ca0;

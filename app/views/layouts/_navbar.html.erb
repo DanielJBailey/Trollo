@@ -1,6 +1,18 @@
 <nav class="navigation">
     <% if current_user %>
-        
+        <div class="left-side-menu">
+        <%= link_to root_path, :index => 'go' do %>
+            <%= image_tag("home.svg", class:"home-button") %>
+        <% end %>
+        <%= image_tag("trello-square.svg", class:"board-button") %>
+        </div>
+        <%= link_to root_path, :index => 'go' do %>
+            <span class="menu-logo"><%= image_tag("trello-square.svg", class:"trollo-square") %><%= image_tag("logo.svg", class:"logo")%></span>
+        <% end %>
+        <div class="right-side-menu">
+            <%= image_tag("create.svg", class:"add-menu-button") %>
+            <p class="avatar"><%= current_user.get_initials %></p>
+        </div>
     <% else %>
         <div></div>
         <div class="log-in-buttons">

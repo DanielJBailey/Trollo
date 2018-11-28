@@ -1,11 +1,12 @@
 <div class="log-in-container">
   <span class="logo-span"><%= image_tag("trello-square.svg", class:"square-logo") %><%= image_tag("logo.svg", class:"log-in-logo")%></span>
+  <hr/>
   <h2 class="header">Log in to Trollo</h2>
   <hr/>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email Address" %>
     </div>
 
     <div class="field">
