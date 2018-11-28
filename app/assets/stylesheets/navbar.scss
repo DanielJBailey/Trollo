@@ -1,0 +1,55 @@
+@import "variables";
+
+.navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: rgba(255,255,255,0.1);
+
+    .logo-span{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .square {
+            width: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            margin-left: 5px;
+        }
+    }
+
+    .log-in-buttons {
+        display: flex;
+        flex-direction: row;
+
+        .login-button, .sign-up-button {
+            padding: 10px 25px;
+            border-radius: 10px;
+            color: white;
+            &:last-child {
+                margin-left: 10px;
+            }
+        }
+        .login-button {
+            background-color: $darkblue;
+            box-shadow: inset -2px -2px #05487a;
+            &:hover {
+                background-color: #045ca0;
+            }
+        }
+        .sign-up-button {
+            background-color: #7BC86C;
+            font-weight: bold;
+            box-shadow: inset -2px -2px #05487a;
+            &:hover {
+                background-color: #519839;
+            }
+        }
+    }
+}

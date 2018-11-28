@@ -1,0 +1,36 @@
+  <div class="log-in-container">
+  <span class="logo-span"><%= image_tag("trello-square.svg", class:"square-logo") %><%= image_tag("logo.svg", class:"log-in-logo")%></span>
+  <h2 class="header">Register for Trollo</h2>
+  <hr/>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <div class="field">
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name",class: "input", placeholder: "First Name" %>
+      </div>
+
+      <div class="field">
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name",class: "input", placeholder: "Last Name" %>
+      </div>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "input", placeholder: "Email" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password",class: "input", placeholder: "Password" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "input", placeholder: "Confirm" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign Up", class: "submit" %>
+      </div>
+    <% end %>
+  </div>
+  
+
+
+

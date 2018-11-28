@@ -1,0 +1,23 @@
+<div class="log-in-container">
+  <span class="logo-span"><%= image_tag("trello-square.svg", class:"square-logo") %><%= image_tag("logo.svg", class:"log-in-logo")%></span>
+  <h2 class="header">Log in to Trollo</h2>
+  <hr/>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", class: "input", placeholder: "Password"  %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Log In', class: "submit"%>
+    </div>
+  <% end %>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <% end -%>
+</div>
+
