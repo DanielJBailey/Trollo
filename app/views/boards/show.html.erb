@@ -17,9 +17,9 @@
     <ul class="lists-container">
         <% @lists.each do |list|%>
         <% end %>
-        <li>
+        <li class="list">
             <%= form_with(model: @list, local:true, _method: :put,:url => "/boards/#{@board.id}/lists", class:"new-list-form") do |f| %>
-                <%= f.text_field :name, class:"new-list-name", required: true, autofocus: true, placeholder: "Enter a list title..." %>
+                <%= f.text_field :name, class:"new-list-name", autocomplete: 'off',required: true, placeholder: "#{@what_to_say}" %>
                 <span class="new-list-bottom"><%= f.submit 'Add list', class:"submit-form"%><%= image_tag 'times.svg', class:"close-new-list"%></span>
             <% end %>
         </li>
