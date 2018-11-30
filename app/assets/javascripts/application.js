@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let listCount = document.getElementsByClassName('.list').length;
     let placeholder = listCount > 1 ? "+ Add another list..." : "+ Add a list";
-    console.log(listCount)
 
 
     // VARIABLES
@@ -29,92 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    let new_list_name = document.querySelector('.new-list-name');
-    let new_list_form = document.querySelector('.new-list-form');
-    new_list_name.addEventListener('focus', function() {
-            var new_list_bottom = document.querySelector('.new-list-bottom');
-            new_list_bottom.style.display = 'flex';
-            var form = document.querySelector('.new-list-name');
-            form.placeholder = 'Enter a title...';
-            new_list_form.style.backgroundColor = "#dfe3e6";
-            new_list_form.style.padding = "5px 5px 0";
-            new_list_name.style.backgroundColor = "white";
-    });
-
-    new_list_name.addEventListener('focusout', function() {
-        var new_list_bottom = document.querySelector('.new-list-bottom');
-        new_list_bottom.style.display = 'none';
-        new_list_form.style.backgroundColor = "rgba(0,0,0,0.2)";
-        new_list_name.style.backgroundColor = "transparent";
-        new_list_name.placeholder = placeholder;
-        new_list_form.style.padding = "0px";
-
-
-        // .new-list-form {
-        //     padding: 5px;
-        //     margin-top: 5px;
-        //     width: 275px;
-        //     background-color: rgba(0,0,0,0.2);
-        //     border-radius: 5px;
-        //     display: flex;
-        //     flex-direction: column;
-        //     align-items: flex-start;
-        //     justify-content: flex-start;
-        //     .new-list-name {
-        //         padding: 10px;
-        //         background-color: transparent;
-        //         border: none;
-        //         outline: none;
-        //         width: 100%;
-        //         border-radius: 3px;
-        //         &::placeholder {
-        //             color: rgba(255,255,255,1);
-        //             font-size: 14px;
-        //         }
-        //         &:focus::placeholder {
-        //             color: rgba(0,0,0,0.7);
-        //         }
-        //     }
-
-        // .new-list-bottom {
-        //     display: none;
-        //     flex-direction: row;
-        //     justify-content: flex-start;
-        //     transition: 0.3s;
-        //     align-items: center;
-        //     height: auto;
-        //     padding: 10px 0;
-        //     width: 100%;
-        //     position: relative;
-
-        //     .submit-form {
-        //         background-color:#61BD4F;
-        //         box-shadow: 0 1px 0 0 #3F6F21;
-        //         color: white;
-        //         border: none;
-        //         cursor: pointer;
-        //         display: inline-block;
-        //         font-weight: 700;
-        //         line-height: 20px;
-        //         padding: 6px 25px;
-        //         text-align: center;
-        //         border-radius: 5px;
-        //         font-size: 14px;
-        //         &:hover {
-        //             background-color: #519839;
-        //         }
-        //     }
-
-        //     .close-new-list {
-        //         width: 13px;
-        //         margin-left: 10px;
-        //         cursor: pointer;
-        //     }
-        // }
+    if(window.location.pathname.match(/\/boards\/[\d+]/)) {
+        let new_list_name = document.querySelector('.new-list-name');
+        let new_list_form = document.querySelector('.new-list-form');
+        new_list_name.addEventListener('focus', function() {
+                var new_list_bottom = document.querySelector('.new-list-bottom');
+                new_list_bottom.style.display = 'flex';
+                var form = document.querySelector('.new-list-name');
+                form.placeholder = 'Enter a title...';
+                new_list_form.style.backgroundColor = "#dfe3e6";
+                new_list_form.style.padding = "5px 5px 0";
+                new_list_name.style.backgroundColor = "white";
+        });
     
-    });
-        
-    // }
+        new_list_name.addEventListener('focusout', function() {
+            var new_list_bottom = document.querySelector('.new-list-bottom');
+            new_list_bottom.style.display = 'none';
+            new_list_form.style.backgroundColor = "rgba(0,0,0,0.2)";
+            new_list_name.style.backgroundColor = "transparent";
+            new_list_name.placeholder = placeholder;
+            new_list_form.style.padding = "0px";
+        });
+    }
     
     // NAVBAR SCRIPTS ---------------------------------------------------------------------/
     addBoardButton.addEventListener('click', function() {
