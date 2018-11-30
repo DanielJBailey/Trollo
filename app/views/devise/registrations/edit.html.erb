@@ -1,34 +1,36 @@
-<div class="log-in-container">
-  <hr />
-  <h2 class="header">Your Trollo Settings</h2>
-  <hr />
+<div class="log-in-wrapper">
+  <div class="log-in-container">
+    <hr />
+    <h2 class="header">Your Trollo Settings</h2>
+    <hr />
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email" %>
-    </div>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email" %>
+      </div>
 
-    <div class="field">
-      <%= f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "New Password" %>
-    </div>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "New Password" %>
+      </div>
 
-    <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: "Password Confirmation" %>
-    </div>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: "Password Confirmation" %>
+      </div>
 
-    <div class="field">
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "input", placeholder: "Current Password" %>
-    </div>
+      <div class="field">
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "input", placeholder: "Current Password" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Update", class: "submit"%>
-    </div>
-  <% end %>
+      <div class="actions">
+        <%= f.submit "Update", class: "submit"%>
+      </div>
+    <% end %>
 
-  <%= button_to "Cancel Account", registration_path(resource_name), method: :delete, class:"submit red"%></p>
+    <%= button_to "Cancel Account", registration_path(resource_name), method: :delete, class:"submit red"%></p>
 
-  <%= link_to "Back", :back %>
+    <%= link_to "Back", :back %>
+  </div>
 </div>
 
 

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let placeholder = listCount > 1 ? "+ Add another list..." : "+ Add a list";
 
 
-    // VARIABLES
+    // // VARIABLES
 
     let userMenuOpen = document.querySelector('.avatar');
     let overlay = document.querySelector('.overlay');
@@ -17,20 +17,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let editBoardName = document.querySelector('.board-name');
     let editBoardNameForm = document.querySelector('.rename-board-form');
     let boardShowWrapper = document.querySelector('.board-show-wrapper');
+    let new_list_name = document.querySelector('.new-list-name');
+    let new_list_form = document.querySelector('.new-list-form');
+    let createNewBoard = document.querySelector('.create-new-board');
 
-    // if(window.location.pathname.match(/\/boards\/[0-9]/)) {
-    // Edit Board Name Script on Board Show Page
-    editBoardName.addEventListener('click', function() {
-        if(editBoardNameForm.classList.contains('hide')) {
-            editBoardNameForm.classList.remove('hide');
-        } else {
-            editBoardNameForm.classList.add('hide');
-        }
-    });
-
-    if(window.location.pathname.match(/\/boards\/[\d+]/)) {
-        let new_list_name = document.querySelector('.new-list-name');
-        let new_list_form = document.querySelector('.new-list-form');
+    //Edit Board Name Script on Board Show Page
+    if(editBoardName != null || undefined) {
+        editBoardName.addEventListener('click', function() {
+            if(editBoardNameForm.classList.contains('hide')) {
+                editBoardNameForm.classList.remove('hide');
+            } else {
+                editBoardNameForm.classList.add('hide');
+            }
+        });
+    }
+    
+    if(new_list_name != null || undefined) {
         new_list_name.addEventListener('focus', function() {
                 var new_list_bottom = document.querySelector('.new-list-bottom');
                 new_list_bottom.style.display = 'flex';
@@ -50,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             new_list_form.style.padding = "0px";
         });
     }
+        
+  
     
     // NAVBAR SCRIPTS ---------------------------------------------------------------------/
     addBoardButton.addEventListener('click', function() {
@@ -100,9 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     });
 
-
-    if(window.location.pathname == "/") {
-        let createNewBoard = document.querySelector('.create-new-board');
+    if(createNewBoard != null || undefined) {
         createNewBoard.addEventListener('click', function() {
             overlay.classList.remove('hide');
             boardForm.classList.remove('hide');
@@ -116,14 +118,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+        
 
-    // END NAVBAR SCRIPTS ---------------------------------------------------------------------/
+    // // END NAVBAR SCRIPTS ---------------------------------------------------------------------/
     
     
 
 
 
-    // <%= button_to 'Remove', {:controller => :boards, :action => 'destroy', :id => board.id }, :method => :delete %>
+    // // <%= button_to 'Remove', {:controller => :boards, :action => 'destroy', :id => board.id }, :method => :delete %>
     
     
 

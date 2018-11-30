@@ -7,6 +7,7 @@ class BoardsController < ApplicationController
 
   def show
     @lists = @board.lists.all
+    @list = @board.lists.new
   end
 
   def new
@@ -14,15 +15,12 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = current_user.boards.new(board_params)  
+    @board = current_user.boards.new(board_params) 
     if @board.save
       redirect_to boards_path
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update

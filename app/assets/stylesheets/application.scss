@@ -6,6 +6,7 @@
 @import "variables";
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -24,243 +25,219 @@ a {
 }
 
 body {
-    //background-color: $background;
     font-family: 'PT Sans', sans-serif;
     color: $body;
-    overflow: hidden;
     position: relative;
-}
-@media (max-width: 768px) {
-    body {
-        overflow-y: scroll;
-        overflow-x: scroll;
-    }
 }
 
 .site-wrapper {
+    height: 100%;
     width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100%;
-    min-height: 100vh;
-    position: relative;
-    background-color: $background;
+}
 
-    .user-menu {
-        position: absolute;
-        margin: 48px 5px 0 0;
-        padding: 0 0 10px 0;
-        top: 0;
-        right: 0;
-        box-shadow: 0 8px 16px -4px rgba(9,45,66,.25), 0 0 0 1px rgba(9,45,66,.08);
-        width: 300px;
-        height: auto;
-        border-radius: 5px;
-        padding: 0 10px 10px;
-        z-index: 99;
-        background-color: white;
-        animation: fadeIn 0.2s linear;
-
-        .menu-options {
-            list-style: none;
-
-            .menu-item {
-                cursor: pointer;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
-                font-weight: 700;
-                padding: 10px 12px;
-                position: relative;
-                width: 100%;
-                text-decoration: none;
-                &:hover {
-                    background-color: rgba(0,0,0,0.03);
-                }
-                &:last-child {
-                    border-top: 1px solid rgba(9,45,66,.13);
-                    border-top-width: 50%;
-                }
-
-                .icon {
-                    width: 15px;
-                    height: 15px;
-                    margin-right: 10px;
-                    fill: white;
-                }
-            }
-        }
-
-        .user-name {
-            color: #6b808c;
-            line-height: 40px;
-            border-bottom: 1px solid rgba(9,45,66,.13);
-            padding: 0 32px;
-            width: 100%;
-            text-align: center;
+.user-menu {
+    position: absolute;
+    margin: 48px 5px 0 0;
+    padding: 0 0 10px 0;
+    top: 0;
+    right: 0;
+    box-shadow: 0 8px 16px -4px rgba(9, 45, 66, .25), 0 0 0 1px rgba(9, 45, 66, .08);
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    padding: 0 10px 10px;
+    z-index: 99;
+    background-color: white;
+    animation: fadeIn 0.2s linear;
+    .menu-options {
+        list-style: none;
+        .menu-item {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 700;
+            padding: 10px 12px;
             position: relative;
-
-            .close-icon {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
+            width: 100%;
+            text-decoration: none;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.03);
+            }
+            &:last-child {
+                border-top: 1px solid rgba(9, 45, 66, .13);
+                border-top-width: 50%;
+            }
+            .icon {
                 width: 15px;
-                margin-top: 12px;
                 height: 15px;
-                cursor: pointer;
+                margin-right: 10px;
+                fill: white;
             }
         }
     }
-
-    .add-board-menu {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 300px;
-        border-radius: 5px;
-        padding-bottom: 10px;
-        box-shadow: 0 8px 16px -4px rgba(9,45,66,.25), 0 0 0 1px rgba(9,45,66,.08);
-        margin: 48px 5px 0 0;
-        z-index: 100;
-        background-color: white;
-
-        .close-board-menu {
-            width: 15px;
-            height: 15px;
+    .user-name {
+        color: #6b808c;
+        line-height: 40px;
+        border-bottom: 1px solid rgba(9, 45, 66, .13);
+        padding: 0 32px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        .close-icon {
             position: absolute;
             top: 0;
+            bottom: 0;
             right: 0;
+            width: 15px;
             margin-top: 12px;
-            margin-right: 10px;
+            height: 15px;
             cursor: pointer;
         }
-
-        .title {
-            color: #6b808c;
-            line-height: 40px;
-            border-bottom: 1px solid rgba(9,45,66,.13);
-            padding: 0 32px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            font-size: 14px;
-        }
-
-        .add-board {
-            cursor: pointer;
-            padding: 10px;
-
-            .create-board {
-                font-size: 14px;
-            }
-            .description {
-                color: #6b808c;
-                display: block;
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 16px;
-                margin-top: 4px;
-            }
-            &:hover {
-                background-color: rgba(0,0,0,0.03);
-            }
-        }
-
-        
     }
+}
 
-    .board-form {
-        position: absolute;
-        top: 0;
-        margin: 0 auto;
-        z-index: 99;
-        margin-top: 60px;
-
-        .field {
-            width: 300px;
-            height: 96px;
-            background-color: rgb(0, 121, 191);
-            padding: 10px 10px 50px;
-            border-radius: 5px;
-
-            .input {
-                padding: 10px;
-                border: none;
-                font-size: 16px;
-                color: white;
-                font-weight: 700;
-                background-color: rgba(255,255,255,0.3);
-                outline: none;
-                border-radius: 5px;
-                width: 100%;
-                &::placeholder {
-                    font-size: 16px;
-                    color: rgba(255,255,255,0.7);
-                    font-weight: 700;
-                }
-            }
-        }
-
-        .submit {
-            padding: 10px;
-            -webkit-appearance: button;
-            margin: 10px 0;
-            background-color: #5aac44;
-            border-radius: 5px;
-            border: none;
-            color: #fff;
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        
-    }
-
-    .overlay {
-        height: 100%;
-        min-height: calc(100vh - 41px);
-        width: 100%;
-        background-color: rgba(0,0,0,0.8);
+.add-board-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    box-shadow: 0 8px 16px -4px rgba(9, 45, 66, .25), 0 0 0 1px rgba(9, 45, 66, .08);
+    margin: 48px 5px 0 0;
+    z-index: 100;
+    background-color: white;
+    .close-board-menu {
+        width: 15px;
+        height: 15px;
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 2;
-        animation: fadeIn 0.2s linear;
+        margin-top: 12px;
+        margin-right: 10px;
+        cursor: pointer;
     }
+    .title {
+        color: #6b808c;
+        line-height: 40px;
+        border-bottom: 1px solid rgba(9, 45, 66, .13);
+        padding: 0 32px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        font-size: 14px;
+    }
+    .add-board {
+        cursor: pointer;
+        padding: 10px;
+        .create-board {
+            font-size: 14px;
+        }
+        .description {
+            color: #6b808c;
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            margin-top: 4px;
+        }
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+}
 
-    .logo-span {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+.board-form {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    z-index: 99;
+    margin-top: 60px;
+    .field {
+        width: 300px;
+        height: 96px;
+        background-color: rgb(0, 121, 191);
+        padding: 10px 10px 50px;
+        border-radius: 5px;
+        .input {
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, 0.3);
+            outline: none;
+            border-radius: 5px;
+            width: 100%;
+            &::placeholder {
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.7);
+                font-weight: 700;
+            }
+        }
+    }
+    .submit {
+        padding: 10px;
+        -webkit-appearance: button;
+        margin: 10px 0;
+        background-color: #5aac44;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
+
+.overlay {
+    height: 100%;
+    min-height: calc(100vh - 41px);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    animation: fadeIn 0.2s linear;
+}
+
+.logo-span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .square-logo {
+        width: 100px;
+        padding: 10px;
+    }
+    .log-in-logo {
+        width: 250px;
+        padding: 10px;
+    }
+    @media (max-width: 450px) {
         .square-logo {
-            width: 100px;
-            padding: 10px;
+            width: 60px;
+            padding: 5px;
         }
-    
         .log-in-logo {
-            width: 250px;
-            padding: 10px;
-        }
-
-        @media (max-width: 450px) {
-            .square-logo {
-                width: 60px;
-                padding: 5px;
-            }
-            .log-in-logo {
-                width: 150px;
-                padding: 5px;
-            }
+            width: 150px;
+            padding: 5px;
         }
     }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
