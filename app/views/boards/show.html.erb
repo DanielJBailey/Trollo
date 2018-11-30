@@ -1,4 +1,4 @@
-<% @images = ["boca.jpeg","hills.jpeg", "mountains.jpeg", "bird.jpeg"] %>
+<% @images = ["boca.jpeg","hills.jpeg", "mountains.jpeg", "bird.jpeg", "snow.jpeg", "lake.jpeg"] %>
 <% @what_to_say = @lists.length > 1 ? "+ Add another list": "+ Add a list" %>
 
 <%= content_tag :div, nil, style: "background-image: url(#{image_path @images.sample})",class:"board-show-wrapper" do %>
@@ -15,22 +15,26 @@
     <% end %>
 
     
-        <ul class="list-container">
-            <% @lists.each do |list|%>
-                <li class="list">
-                    <div class="title-header"><%= list.title %></div>
-                </li>
-            <% end %>
-            <li class="form-list">
-                <%= form_with(model: [@board, @list], local:true, method: "POST", :url => "/boards/#{@board.id}/lists", class:"new-list-form") do |f| %>
-                    <%= f.text_field :title, class:"new-list-name", autocomplete: 'off',required: true, placeholder: "#{@what_to_say}" %>
-                    <span class="new-list-bottom">
-                        <%= f.submit 'Add list', class:"submit-form"%>
-                        <%= image_tag 'times.svg', class:"close-new-list"%>
-                    </span>
+    <ul class="list-container">
+        <% @lists.each do |list|%>
+            <li class="list">
+                <div class="title-header"><%= list.title %></div>
+                <%= form_with(model: [@list, @card], local: true, method: "POST", :url => "/lists/#{@list.id}/cards") do |f| %>
+                    <button class="add-card-button"><i class="fas fa-plus plus"></i><span class="button-text">Add a card</span></button>
+                    <%= f.text_field :title, placeholder: "Enter a title for this card...", required: true, autofocus: true %>
                 <% end %>
             </li>
-        </ul>
+        <% end %>
+        <li class="form-list">
+            <%= form_with(model: [@board, @list], local:true, method: "POST", :url => "/boards/#{@board.id}/lists", class:"new-list-form") do |f| %>
+                <%= f.text_field :title, class:"new-list-name", autocomplete: 'off',required: true, placeholder: "#{@what_to_say}" %>
+                <span class="new-list-bottom">
+                    <%= f.submit 'Add list', class:"submit-form"%>
+                    <%= image_tag 'times.svg', class:"close-new-list"%>
+                </span>
+            <% end %>
+        </li>
+    </ul>
 
 <% end %>
 

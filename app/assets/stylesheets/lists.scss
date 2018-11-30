@@ -1,3 +1,35 @@
-// Place all the styles related to the lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.add-card-button {
+    width: 100%;
+    margin: 0;
+    -webkit-appearance: button;
+    text-align: left;
+    border: none;
+    outline: none;
+    background-color: #dfe3e6;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 14px;
+    height: auto;
+    padding: 10px;
+    color: #6b808c;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #c5c8cc;
+        color: $body;
+    }
+
+    &:hover > .button-text {
+        text-decoration: underline;
+    }
+
+    .plus {
+        margin-right: 5px;
+    }
+}
