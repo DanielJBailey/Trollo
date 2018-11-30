@@ -1,2 +1,30 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<% @images = ["boca.jpeg","hills.jpeg", "mountains.jpeg", "bird.jpeg"] %>
+<% @what_to_say = @lists.length > 1 ? "+ Add another list": "+ Add a list" %>
+
+<%= content_tag :div, nil, style: "background-image: url(#{image_path @images.sample})",class:"board-show-wrapper" do %>
+    <h3 class="board-name"><%= @board.name %></h3>
+    <%= form_with(model: @board, local:true, _method: :put,:url => "/boards/#{@board.id}", class:"hide rename-board-form") do |f| %>
+        <div class="form-header">
+            <p>Rename Board</p>
+        </div>
+        <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name, class:"new-board-name", required: true, autofocus: true, value: @board.name %>
+        </div>
+        <%= f.submit 'Rename', class:"submit-form"%>
+    <% end %>
+
+    <ul class="lists-container">
+        <% @lists.each do |list|%>
+        <% end %>
+        <li>
+            <%= form_with(model: @list, local:true, _method: :put,:url => "/boards/#{@board.id}/lists", class:"new-list-form") do |f| %>
+                <%= f.text_field :name, class:"new-list-name", required: true, autofocus: true, placeholder: "Enter a list title..." %>
+                <span class="new-list-bottom"><%= f.submit 'Add list', class:"submit-form"%><%= image_tag 'times.svg', class:"close-new-list"%></span>
+            <% end %>
+        </li>
+    </ul>
+
+<% end %>
+
+

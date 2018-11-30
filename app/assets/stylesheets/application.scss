@@ -24,9 +24,17 @@ a {
 }
 
 body {
-    background-color: $background;
+    //background-color: $background;
     font-family: 'PT Sans', sans-serif;
     color: $body;
+    overflow: hidden;
+    position: relative;
+}
+@media (max-width: 768px) {
+    body {
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
 }
 
 .site-wrapper {
@@ -36,12 +44,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    min-height: calc(100vh - 72px);
+    min-height: 100vh;
     position: relative;
+    background-color: $background;
 
     .user-menu {
         position: absolute;
-        margin: 5px 5px 0 0;
+        margin: 48px 5px 0 0;
         padding: 0 0 10px 0;
         top: 0;
         right: 0;
@@ -115,7 +124,7 @@ body {
         border-radius: 5px;
         padding-bottom: 10px;
         box-shadow: 0 8px 16px -4px rgba(9,45,66,.25), 0 0 0 1px rgba(9,45,66,.08);
-        margin: 5px;
+        margin: 48px 5px 0 0;
         z-index: 100;
         background-color: white;
 
@@ -164,6 +173,53 @@ body {
         
     }
 
+    .board-form {
+        position: absolute;
+        top: 0;
+        margin: 0 auto;
+        z-index: 99;
+        margin-top: 60px;
+
+        .field {
+            width: 300px;
+            height: 96px;
+            background-color: rgb(0, 121, 191);
+            padding: 10px 10px 50px;
+            border-radius: 5px;
+
+            .input {
+                padding: 10px;
+                border: none;
+                font-size: 16px;
+                color: white;
+                font-weight: 700;
+                background-color: rgba(255,255,255,0.3);
+                outline: none;
+                border-radius: 5px;
+                width: 100%;
+                &::placeholder {
+                    font-size: 16px;
+                    color: rgba(255,255,255,0.7);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .submit {
+            padding: 10px;
+            -webkit-appearance: button;
+            margin: 10px 0;
+            background-color: #5aac44;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        
+    }
+
     .overlay {
         height: 100%;
         min-height: calc(100vh - 41px);
@@ -173,6 +229,7 @@ body {
         top: 0;
         right: 0;
         z-index: 2;
+        animation: fadeIn 0.2s linear;
     }
 
     .logo-span {

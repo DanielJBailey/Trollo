@@ -6,7 +6,11 @@
     align-items: center;
     padding: 5px;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    z-index: 99999;
+    
     .left-side-menu {
         display: flex;
         flex-direction: row;
@@ -48,6 +52,8 @@
             color: $body;
             width: 32px;
             height: 32px;
+            font-size: 14px;
+            letter-spacing: -0.5px;
             border-radius: 100%;
             display: flex;
             flex-direction: column;

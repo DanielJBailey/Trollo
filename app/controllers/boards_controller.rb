@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :edit, :destroy, :update]
 
   def index
-    @boards = Board.all
+    @boards = current_user.boards.all
   end
 
   def show
@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = current_user.boards.new(board_params)
+    @board = current_user.boards.new(board_params)  
     if @board.save
       redirect_to boards_path
     else
@@ -26,17 +26,16 @@ class BoardsController < ApplicationController
   end
 
   def update
-    @board = Board.new(board_params)
-    if @board.update
-      redirect_to boards_path
+    if @board.update(rename_params)
+      redirect_to @board
     else
       render :edit
     end
   end
 
-  
-
   def destroy
+    @board.destroy
+    redirect_to boards_path
   end
 
   private
@@ -46,6 +45,10 @@ class BoardsController < ApplicationController
   end
 
   def board_params
+    params.permit(:name)
+  end
+
+  def rename_params
     params.require(:board).permit(:name)
   end
 end

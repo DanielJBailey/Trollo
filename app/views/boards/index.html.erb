@@ -1,4 +1,21 @@
+<% @color_list = ["rgb(0, 121, 191)", "rgb(81, 152, 57)", "rgb(176, 70, 50)"]%>
+
 <div class="boards-container">
-    <h2>Personal Boards</h2>    
+    <div class="boards-wrapper">
+        <span class="boards-header"><%= image_tag 'user.svg', class:"icon" %><h5>Personal Boards</h5></span>
+        <ul class="board-container">
+            <% @boards.each do |board| %>
+                <%= link_to board_path(board) do %>
+                <li class="board" style="background-color:<%= @color_list.sample%>">
+                    <span class="board-name"><%= board.name.truncate(50, separator: '...') %></span>
+                </li>
+                <% end %>
+            <% end %> 
+            <li class="board create-new-board">
+                <p>Create new board...</p>
+            </li> 
+        </ul>
+        
+    </div>
 </div>
 
