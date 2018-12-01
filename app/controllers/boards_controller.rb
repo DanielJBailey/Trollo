@@ -6,13 +6,9 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @lists = @board.lists.all
+    @lists = @board.lists.all.order("created_at")
     @list = @board.lists.new
     @card = @list.cards.new
-  end
-
-  def new
-    @board = Board.new
   end
 
   def create
@@ -25,7 +21,7 @@ class BoardsController < ApplicationController
   end
 
   def update
-    if @board.update(rename_params)
+    if @board.update(board_params)
       redirect_to @board
     else
       render :edit
@@ -44,10 +40,6 @@ class BoardsController < ApplicationController
   end
 
   def board_params
-    params.permit(:name)
-  end
-
-  def rename_params
     params.require(:board).permit(:name)
   end
 end

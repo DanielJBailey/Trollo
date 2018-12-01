@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_board
+  before_action :set_board, except: [:update]
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -19,7 +19,15 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
+      if @list.update(title: list_params[:title])
+        redirect_to @list.board
+      else
+        render :edit
+      end
   end
 
   private
@@ -34,6 +42,4 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:title)
   end
-
-  
 end

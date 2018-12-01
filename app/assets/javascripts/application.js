@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
     let new_list_name = document.querySelector('.new-list-name');
     let new_list_form = document.querySelector('.new-list-form');
     let createNewBoard = document.querySelector('.create-new-board');
+    let listTitles = document.querySelectorAll('.list-title');
+
+    if(listTitles != null || undefined) {
+        listTitles.forEach((title) => {
+            title.addEventListener('click', () => {
+                title.style.display = "none";
+            })
+        });
+    }
+
 
     //Edit Board Name Script on Board Show Page
     if(editBoardName != null || undefined) {
@@ -130,7 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
 
-
+//     <%= form_with(model: [@list, @card], local: true, method: "POST", :url => "/lists/#{@list.id}/cards") do |f| %>
+//     <%= f.text_field :title, placeholder: "Enter a title for this card...", required: true, autofocus: false%>
+// <% end %>
 
 
 

@@ -1,4 +1,4 @@
-<%= form_with(model: @board, local:true, method: "POST",:url => "/boards", class:"board-form hide") do |f| %>
+<%= form_for(@new_board, :html => {class:"board-form hide"}) do |f| %>
     <div class="field">
         <%= f.text_field :name, class:"input", placeholder: "Add board title", required: true, autofocus:true %>
     </div>

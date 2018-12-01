@@ -1,3 +1,4 @@
+@import "variables";
 // STYLES FOR BOARDS INDEX
 .hide {
     display: none;
@@ -251,18 +252,65 @@
                 margin: 0 10px 0 0
             }
             .title-header {
-                padding: 12px 10px;
+                padding: 0px 5px 0px 10px;
                 background-color: #dfe3e6;
+                height: 43px;
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-start;
                 display: flex;
-                font-weight: 700;
-                font-size: 14px;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 border-bottom: 1px solid #c5c8cc;
+                cursor: pointer;
+
+                .hide {
+                    display: none;
+                }
+
+                .list-title {
+                    font-weight: 700;
+                    font-size: 14px;
+                    padding: 5px 0;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    display: flex;
+                    width: 100%;  
+                    color: $body;
+                }
+
+                .rename-list-title {
+                    width: 100%;
+                    margin-right: 10px;
+                    display: none;
+                    .new-list-title {
+                        background-color: white;
+                        border: none;
+                        outline: none;
+                        padding: 10px;
+                        width: 100%;
+                        border-radius: 5px;
+                        box-shadow: 0 0 0 2pt #026aa7;
+                        font-size: 13px;
+                        font-weight: 700;
+                    }
+                }
+
+                .open-card-menu {
+                    margin-left: auto;
+                    color: #95989b;
+                    padding: 11px;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    &:hover {
+                    background-color: #bdc0c4;
+                    color: $body;
+                    }
+                }
             }
+
+            
         }
         .form-list {
             margin-right: 10px;

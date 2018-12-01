@@ -3,7 +3,7 @@
 
 <%= content_tag :div, nil, style: "background-image: url(#{image_path @images.sample})",class:"board-show-wrapper" do %>
     <h3 class="board-name"><%= @board.name %></h3>
-    <%= form_with(model: @board, local:true, _method: :put,:url => "/boards/#{@board.id}", class:"hide rename-board-form") do |f| %>
+    <%= form_for(@board, :html => {class:"hide rename-board-form"}) do |f| %>
         <div class="form-header">
             <p>Rename Board</p>
         </div>
@@ -18,15 +18,19 @@
     <ul class="list-container">
         <% @lists.each do |list|%>
             <li class="list">
-                <div class="title-header"><%= list.title %></div>
-                <%= form_with(model: [@list, @card], local: true, method: "POST", :url => "/lists/#{@list.id}/cards") do |f| %>
-                    <button class="add-card-button"><i class="fas fa-plus plus"></i><span class="button-text">Add a card</span></button>
-                    <%= f.text_field :title, placeholder: "Enter a title for this card...", required: true, autofocus: true %>
-                <% end %>
+                <div class="title-header">
+                    <p class="list-title"><%= list.title %></p>
+                    <%= form_for([@board,@list], :html => {class:"rename-list-title"}) do |f| %>
+                        <%= f.text_field :title, value:list.title, required: true, autofocus: true, class: "new-list-title"%>
+                    <% end %>
+                    <i class="fas fa-ellipsis-h open-card-menu"></i>
+                </div>
+                <button class="add-card-button"><i class="fas fa-plus plus"></i><span class="button-text">Add a card</span></button>
+                
             </li>
         <% end %>
         <li class="form-list">
-            <%= form_with(model: [@board, @list], local:true, method: "POST", :url => "/boards/#{@board.id}/lists", class:"new-list-form") do |f| %>
+            <%= form_for([@board, @list], :html => {class:"new-list-form"}) do |f| %>
                 <%= f.text_field :title, class:"new-list-name", autocomplete: 'off',required: true, placeholder: "#{@what_to_say}" %>
                 <span class="new-list-bottom">
                     <%= f.submit 'Add list', class:"submit-form"%>
