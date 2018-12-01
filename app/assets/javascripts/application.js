@@ -21,20 +21,25 @@ document.addEventListener('DOMContentLoaded', function() {
     let new_list_form = document.querySelector('.new-list-form');
     let createNewBoard = document.querySelector('.create-new-board');
     let listTitles = document.querySelectorAll('.list-title');
-    let newListForms = document.querySelectorAll('.new-list-form');
 
+    let renameListForm = document.querySelectorAll('.rename-list-title');
+    let newListTitleInput = document.querySelectorAll('.new-list-title');
 
 
     if(listTitles != null || undefined) {
-
         listTitles.forEach((title) => {
             title.addEventListener('click', (e) => {
-                var form = e.target.parentElement.childNodes[3];
+                var title_parent = e.target.parentElement
+                var form = title_parent.querySelector('.rename-list-title');
+                var input = form.querySelector('.new-list-title');
                 form.style.display = "block";
                 title.style.display = "none";
-                form.addEventListener('focusout', function() {
+                input.focus();
+                input.select();
+                input.addEventListener('focusout', function() {
                     title.style.display = "flex";
                     form.style.display = "none";
+                    document.activeElement.blur();
                 });
             });
         });

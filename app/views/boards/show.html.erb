@@ -20,7 +20,7 @@
             <li class="list">
                 <div class="title-header">
                     <p class="list-title"><%= list.title %></p>
-                    <%= form_for([@board,@list], :html => {class:"rename-list-title"}) do |f| %>
+                    <%= form_for([@board,@list], method: :put, :url => "/lists/#{list.id}", :html => {class:"rename-list-title"}) do |f| %>
                         <%= f.text_field :title, value:list.title, required: true, autofocus: true, class: "new-list-title"%>
                     <% end %>
                     <i class="fas fa-ellipsis-h open-card-menu"></i>
