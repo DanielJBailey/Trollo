@@ -21,15 +21,24 @@ document.addEventListener('DOMContentLoaded', function() {
     let new_list_form = document.querySelector('.new-list-form');
     let createNewBoard = document.querySelector('.create-new-board');
     let listTitles = document.querySelectorAll('.list-title');
+    let newListForms = document.querySelectorAll('.new-list-form');
+
+
 
     if(listTitles != null || undefined) {
+
         listTitles.forEach((title) => {
-            title.addEventListener('click', () => {
+            title.addEventListener('click', (e) => {
+                var form = e.target.parentElement.childNodes[3];
+                form.style.display = "block";
                 title.style.display = "none";
-            })
+                form.addEventListener('focusout', function() {
+                    title.style.display = "flex";
+                    form.style.display = "none";
+                });
+            });
         });
     }
-
 
     //Edit Board Name Script on Board Show Page
     if(editBoardName != null || undefined) {
