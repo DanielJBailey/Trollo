@@ -2,6 +2,10 @@
 <% @what_to_say = @lists.length > 1 ? "+ Add another list": "+ Add a list" %>
 
 <%= content_tag :div, nil, style: "background-image: url(#{image_path @images.sample})",class:"board-show-wrapper" do %>
+
+    <%= button_to 'Delete Board',{:controller => :boards, :action => 'destroy', :id => @board.id }, method: :delete, class:"delete-board" %>
+
+
     <h3 class="board-name"><%= @board.name %></h3>
     <%= form_for(@board, :html => {class:"hide rename-board-form"}) do |f| %>
         <div class="form-header">
@@ -14,7 +18,7 @@
         <%= f.submit 'Rename', class:"submit-form"%>
     <% end %>
 
-    
+        
     <ul class="list-container">
         <% @lists.each do |list|%>
             <li class="list">
@@ -23,7 +27,9 @@
                     <%= form_for([@board,@list], method: :put, :url => "/lists/#{list.id}", :html => {class:"rename-list-title"}) do |f| %>
                         <%= f.text_field :title, value:list.title, required: true, autofocus: true, class: "new-list-title"%>
                     <% end %>
-                    <i class="fas fa-ellipsis-h open-card-menu"></i>
+                    <div class="open-card-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M192 256c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32zm88-32c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm-240 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32z"/></svg>
+                    </div>
                 </div>
                 <button class="add-card-button"><i class="fas fa-plus plus"></i><span class="button-text">Add a card</span></button>
                 
@@ -41,5 +47,7 @@
     </ul>
 
 <% end %>
+
+
 
 

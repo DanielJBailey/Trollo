@@ -144,18 +144,40 @@
     align-items: flex-start;
     position: relative;
     overflow-x: auto;
+
+
+    .delete-board {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 52px 10px;
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: rgba(0,0,0,0.6);
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        &:hover {
+            background-color: rgba(0,0,0,1);
+        }
+    }
+
     .board-name {
         font-weight: 700;
         display: flex;
         width: auto;
+        padding: 10px 20px;
+        background-color: rgba(0,0,0,0.6);
         color: #fff;
-        padding: 5px;
         letter-spacing: -0.5px;
         border-radius: 5px;
         margin-bottom: 10px;
         cursor: pointer;
         &:hover {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 1);
             color: white;
         }
     }
@@ -252,7 +274,7 @@
                 margin: 0 10px 0 0
             }
             .title-header {
-                padding: 0px 5px 0px 10px;
+                padding: 5px 5px 5px 10px;
                 background-color: #dfe3e6;
                 height: 43px;
                 flex-direction: row;
@@ -282,6 +304,7 @@
 
                 .rename-list-title {
                     width: 100%;
+                    margin-right: 10px;
                     display: none;
                     transition: 0.2s;
                     .new-list-title {
@@ -299,13 +322,25 @@
 
                 .open-card-menu {
                     margin-left: auto;
+                    box-sizing: border-box;
                     color: #95989b;
-                    padding: 11px;
+                    padding: 5px;
                     border-radius: 3px;
                     cursor: pointer;
                     &:hover {
                     background-color: #bdc0c4;
-                    color: $body;
+                    }
+
+                    svg {
+                        width: 25px;
+                        fill: #95989b;
+                        height: 25px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    &:hover > svg {
+                        fill: $body;
                     }
                 }
             }

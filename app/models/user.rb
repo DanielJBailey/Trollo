@@ -5,7 +5,7 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :boards, dependent: :destroy
+  has_many :boards
 
   def get_initials
     first_letter = self.first_name.split('').first

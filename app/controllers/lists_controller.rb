@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_board, except: [:update]
+  before_action :set_board, except: [:update, :destroy]
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -28,6 +28,12 @@ class ListsController < ApplicationController
       else
         render :edit
       end
+  end
+
+  def destroy
+    @list.board
+    @list.destroy
+    redirect_to @list.board
   end
 
   private

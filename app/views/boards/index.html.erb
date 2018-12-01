@@ -7,7 +7,7 @@
             <% @boards.each do |board| %>
                 <%= link_to board_path(board) do %>
                 <li class="board" style="background-color:<%= @color_list.sample%>">
-                    <span class="board-name"><%= board.name.truncate(50, separator: '...') %></span>
+                    <span class="board-name"><%= board.name != nil ? board.name.truncate(50, separator: '...') : "" %></span>
                 </li>
                 <% end %>
             <% end %> 

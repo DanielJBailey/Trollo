@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "boards#index"
 
+
   devise_scope :user do 
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

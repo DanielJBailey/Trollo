@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :edit, :destroy, :update]
+  before_action :set_new_board
 
   def index
     @boards = current_user.boards.all
@@ -30,13 +31,17 @@ class BoardsController < ApplicationController
 
   def destroy
     @board.destroy
-    redirect_to boards_path
+    redirect_to root_path
   end
 
   private
 
   def set_board 
     @board = Board.find(params[:id])
+  end
+
+  def set_new_board
+    @new_board = current_user.boards.new
   end
 
   def board_params

@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     let listCount = document.getElementsByClassName('.list').length;
@@ -150,13 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // // <%= button_to 'Remove', {:controller => :boards, :action => 'destroy', :id => board.id }, :method => :delete %>
+    // <%= button_to "Remove", {:controller => :lists, :action => 'destroy', :id => list.id }, method: :delete %>
     
-    
-
-//     <%= form_with(model: [@list, @card], local: true, method: "POST", :url => "/lists/#{@list.id}/cards") do |f| %>
-//     <%= f.text_field :title, placeholder: "Enter a title for this card...", required: true, autofocus: false%>
-// <% end %>
 
 
 
