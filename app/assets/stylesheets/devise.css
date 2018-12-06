@@ -1,0 +1,121 @@
+.log-in-wrapper {
+  background-color: #026aa7;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.log-in-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 450px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 50px;
+  z-index: 2;
+}
+
+.log-in-container ::-moz-selection {
+  background: transparent;
+  /* WebKit/Blink Browsers */
+}
+
+.log-in-container ::selection {
+  background: transparent;
+  /* WebKit/Blink Browsers */
+}
+
+.log-in-container ::-moz-selection {
+  background: transparent;
+  /* Gecko Browsers */
+}
+
+.log-in-container .header {
+  font-size: 30px;
+  font-weight: 300;
+  color: white;
+}
+
+.log-in-container hr {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  border: none;
+  margin: 15px 0;
+}
+
+.log-in-container form {
+  width: 100%;
+}
+
+.log-in-container form .input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  font-size: 16px;
+  color: #333;
+  outline-color: #7BC86C;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.log-in-container form .submit {
+  padding: 15px;
+  width: 100%;
+  margin: 10px 0;
+  background-color: #2d3436;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  -webkit-appearance: button;
+}
+
+.log-in-container form .submit:hover {
+  background-color: #404a4d;
+}
+
+.log-in-container form .submit.red {
+  background-color: #d63031;
+}
+
+.log-in-container form .submit.red:hover {
+  background-color: #dd5555;
+}
+
+@media (max-width: 768px) {
+  .log-in-container {
+    width: 100%;
+    padding: 0 2em;
+  }
+}
+/*# sourceMappingURL=devise.css.map */

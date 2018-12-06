@@ -1,0 +1,43 @@
+.add-card-button {
+  width: 100%;
+  margin: 0;
+  -webkit-appearance: button;
+  text-align: left;
+  border: none;
+  outline: none;
+  background-color: #dfe3e6;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  height: auto;
+  padding: 10px;
+  color: #6b808c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  cursor: pointer;
+}
+
+.add-card-button:hover {
+  background-color: #c5c8cc;
+  color: #333;
+}
+
+.add-card-button:hover > .button-text {
+  text-decoration: underline;
+}
+
+.add-card-button .plus {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=lists.css.map */

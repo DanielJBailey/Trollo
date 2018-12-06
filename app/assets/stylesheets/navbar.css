@@ -1,0 +1,192 @@
+.navigation {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  z-index: 99999;
+}
+
+.navigation .left-side-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navigation .left-side-menu a {
+  height: 32px;
+  width: 32px;
+}
+
+.navigation .left-side-menu a .home-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 32px;
+  padding: 7px;
+  cursor: pointer;
+  width: 32px;
+  border-radius: 3px;
+}
+
+.navigation .left-side-menu a .home-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation .left-side-menu .board-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 32px;
+  padding: 7px;
+  cursor: pointer;
+  width: 32px;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.navigation .left-side-menu .board-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation .right-side-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navigation .right-side-menu .avatar {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.navigation .right-side-menu .avatar:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navigation .right-side-menu .add-menu-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 32px;
+  padding: 5px;
+  cursor: pointer;
+  width: 32px;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.navigation .right-side-menu .add-menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation a {
+  padding: 0;
+}
+
+.navigation a .menu-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.navigation a .menu-logo:hover {
+  opacity: 0.8;
+}
+
+.navigation a .menu-logo .trollo-square {
+  width: 18px;
+}
+
+.navigation a .menu-logo .logo {
+  width: 50px;
+  margin-left: 5px;
+}
+
+.navigation .log-in-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navigation .log-in-buttons .login-button,
+.navigation .log-in-buttons .sign-up-button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: white;
+}
+
+.navigation .log-in-buttons .login-button:last-child,
+.navigation .log-in-buttons .sign-up-button:last-child {
+  margin-left: 10px;
+}
+
+.navigation .log-in-buttons .login-button {
+  background-color: #0079BF;
+  -webkit-box-shadow: inset -2px -2px #05487a;
+          box-shadow: inset -2px -2px #05487a;
+}
+
+.navigation .log-in-buttons .login-button:hover {
+  background-color: #045ca0;
+}
+
+.navigation .log-in-buttons .sign-up-button {
+  background-color: #7BC86C;
+  font-weight: bold;
+  -webkit-box-shadow: inset -2px -2px #05487a;
+          box-shadow: inset -2px -2px #05487a;
+}
+
+.navigation .log-in-buttons .sign-up-button:hover {
+  background-color: #519839;
+}
+/*# sourceMappingURL=navbar.css.map */
