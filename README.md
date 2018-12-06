@@ -18,6 +18,7 @@ A Trello clone built using only Rails with ERB Templates
 - HTML
 - CSS/SCSS
 - Ruby on Rails
+- Devise (auth)
 
 
 ## Screenshots
